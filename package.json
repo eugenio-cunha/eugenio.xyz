@@ -1,0 +1,41 @@
+{
+  "name": "eugenio.xyz",
+  "version": "1.0.0",
+  "description": "Home page",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugenio-cunha/eugenio.xyz.git"
+  },
+  "keywords": [
+    "eugenio",
+    "cunha"
+  ],
+  "author": "Eugenio Cunha <eugenio.cunha@ymail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eugenio-cunha/eugenio.xyz/issues"
+  },
+  "homepage": "https://github.com/eugenio-cunha/eugenio.xyz#readme",
+  "dependencies": {
+    "next": "^9.4.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.5",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint": "^7.0.0",
+    "eslint-plugin-react": "^7.19.0",
+    "typescript": "^3.9.2"
+  }
+}
