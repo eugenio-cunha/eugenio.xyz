@@ -1,9 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
+import { pageview } from '../lib/analytics';
 import { Header, Footer } from './components';
 
-const Layout: React.FunctionComponent<{ title: string }> = ({ children, title }) => (
-  <>
+const Layout: React.FunctionComponent<{ title: string }> = ({ children, title }) => {
+
+  if (process.browser) {
+    pageview(window.location.pathname);
+  }
+  
+  return <>
     <Head>
       <title>{title}</title>
     </Head>
@@ -17,10 +23,9 @@ const Layout: React.FunctionComponent<{ title: string }> = ({ children, title })
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-          background-color: black;
+          font-family: Roboto, Helvetica, sans-serif;
+          background-color: #24292e;
+          color: #fff;
         }
 
         * {
@@ -34,6 +39,7 @@ const Layout: React.FunctionComponent<{ title: string }> = ({ children, title })
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          height: 90vh;
         }
 
         a {
@@ -43,6 +49,6 @@ const Layout: React.FunctionComponent<{ title: string }> = ({ children, title })
 
       `}</style>
   </>
-);
+};
 
 export default Layout;

@@ -76,7 +76,7 @@ typings/
 
 # next.js build output
 .next
-
+out
 # nuxt.js build output
 .nuxt
 
@@ -118,5 +118,3 @@ temp/
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
-
-# End of https://www.gitignore.io/api/node,visualstudiocode
