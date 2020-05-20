@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { NextPage } from 'next';
 import { Layout } from '../layout';
-import Info from './components/info';
+import Effect from './components/effect'
 import { event } from '../lib/analytics';
 import Github from './components/github';
 import Avatar from './components/avatar';
@@ -17,10 +17,16 @@ const IndexPage: NextPage = () => {
       <Avatar alt="Eugenio Cunha" src="./eugenio-cunha.jpeg" />
     </div>
     <div>
-      <h2>Eugênio Cunha</h2>
+      <Link href="/about">
+        <a onClick={() => event('navigate', 'networks', 'About', 'about')}>
+          <Effect>
+            <h2>Eugênio Cunha</h2>
+          </Effect>
+        </a>
+      </Link>
     </div>
     <div>
-      <a href="https://www.linkedin.com/in/eugenio-cunha-68309315b/" title="Linkedin"
+      <a href="https://www.linkedin.com/in/eugenio-cunha-68309315b/"
         onClick={() => event('navigate', 'networks', 'Linkedin', 'linkedin')}>
         <Linkedin title="Linkedin" width="48" height="48" fill="#fff" />
       </a>
@@ -39,13 +45,6 @@ const IndexPage: NextPage = () => {
         onClick={() => event('navigate', 'networks', 'Whatsapp', 'whatsapp')}>
         <Whatsapp title="Contato" width="48" height="48" fill="#fff" />
       </a>
-
-      <Link href="/about">
-        <a title="About" onClick={() => event('navigate', 'networks', 'About', 'about')}>
-          <Info title="Sobre" width="48" height="48" fill="#fff" />
-        </a>
-      </Link>
-
     </div>
   </Layout>;
 };
